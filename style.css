@@ -1,0 +1,34 @@
+.tile-wall{
+	background: #FF0004;
+	width:50px;
+	height: 50px;
+	float: right;
+}.tile-space
+{
+	background: aliceblue;
+	width:50px;
+	height: 50px;
+	float: right;
+}
+.tile-goal{
+    width: 50px;
+    height: 50px;
+    background-color: aquamarine;
+	float: right;
+}
+
+.entity-player{
+    width: 50px;
+    height: 50px;
+    background-color: dimgrey;
+	float: right;
+}
+.entity-block{
+	background: #0E03FF;
+	width:50px;
+	height: 50px;
+	float: right;
+	Top:1px;
+}
+
+
