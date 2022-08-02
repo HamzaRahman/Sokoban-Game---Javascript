@@ -7,8 +7,7 @@
 </head>
 <body>
 	<h1 align="center">Sokoban</h1>
-	<h1 align="center">Use arrow keys to move around</h1>
-	<h1 align="center">Move all the wooden boxes in blue area to complete the level</h1>
+	
 	<!--Div for containing Map-->
 	<div id="Map" style="width: 950px;margin:0 auto"></div>
 
@@ -29,8 +28,8 @@
 					//But when we make it absolute, its xy coordinates are changed and some other element takes its place
 					//So before making it absolute, we first copy its coordinates
 					var bs = block.getBoundingClientRect();
-					var btop = parseInt(bs.top, 10);
-					var bleft = parseInt(bs.left, 10);
+					var btop = parseInt(bs.top);
+					var bleft = parseInt(bs.left);
 
 					//Then we make a space element and assign those copied coordinates to it
 					const Space = document.createElement("div");
@@ -88,8 +87,8 @@
 					Map.appendChild(player);
 
 					var bs = player.getBoundingClientRect();
-					var btop = parseInt(bs.top, 10);
-					var bleft = parseInt(bs.left, 10);
+					var btop = parseInt(bs.top);
+					var bleft = parseInt(bs.left);
 
 					const Space = document.createElement("div");
 					Space.className = 'tile-space';
