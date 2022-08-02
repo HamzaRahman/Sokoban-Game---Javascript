@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sokoban</title>
+	<script src="Sokoban.js"></script>
+	<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h3>Sokoban</h3>
+	<!--Div for containing Map-->
+	<div id="Map" style="width: 950px;"></div>
+    
+	 <script>    
+		const Map = document.getElementById("Map");
+        // Loop to display all the 19x16 tileMap01.mapGrid parts. 
+        for (var i = 0; i < tileMap01.height; i++) 
+        {
+            for (var j = 0;j < tileMap01.width; j++)
+            {
+				//Creating Movable Blocks
+				if(tileMap01.mapGrid[i][j]=="B")
+				{
+					const block = document.createElement("div");
+					block.className = 'entity-block';
+					//Assigning IDs to the blocks, which will be used for searching the blocks.
+					block.id = "block"+i+","+j;
+					Map.appendChild(block);
+					
+					//We have to make Block's position Absolute so it may move freely on map,
+					//But when we make it absolute, its xy coordinates are changed and some other element takes its place
+					//So before making it absolute, we first copy its coordinates
+					var bs = block.getBoundingClientRect();
+					var btop = parseInt(bs.top,10);
+					var bleft = parseInt(bs.left,10);
+					
+					//Then we make a space element and assign those copied coordinates to it
+					const Space = document.createElement("div");
+					Space.className = 'tile-space';
+					document.body.appendChild(Space);
+					Map.appendChild(Space);
+					Space.style.left = bleft+'px';
+  					Space.style.top = btop+'px';
+					
+					//Finally we make blocks positions absolute
+					//and also assign those coordinates to it as well, 
+					//which means the block will be placed upon space element we created before it.
+					block.style.position = "absolute";
+  					block.style.left = bleft+'px';
+  					block.style.top = btop+1+'px';
+				}
+				if(tileMap01.mapGrid[i][j]==" ")
+				{
+					//Creating Space Elements
+					const Space = document.createElement("div");
+					Space.className = 'tile-space';
+					
+					Space.id = "block"+i+","+j;
+					Map.appendChild(Space);
+				}
+				if(tileMap01.mapGrid[i][j]=="W")
+				
+					//Creating Wall Elements
+					const Wall = document.createElement("div");
+					Wall.className = 'tile-wall';
+					
+					Map.appendChild(Wall);
+				}
+				if(tileMap01.mapGrid[i][j]=="G")
+				{
+					//Creating Goal Elements
+					const Goal = document.createElement("div");
+					Goal.className = 'tile-goal';
+					Map.appendChild(Goal);
+				}
+				if(tileMap01.mapGrid[i][j]=="P")
+				{
+					//Creating Player Element
+					//The process is same as moveable blocks
+					const player = document.createElement("div");
+					player.className = 'entity-player';
+					player.id = 'character';
+					
+					Map.appendChild(player);
+					
+					var bs = player.getBoundingClientRect();
+					var btop = parseInt(bs.top,10);
+					var bleft = parseInt(bs.left,10);
+					
+					const Space = document.createElement("div");
+					Space.className = 'tile-space';
+					document.body.appendChild(Space);
+					Map.appendChild(Space);
+					Space.style.left = bleft+'px';
+  					Space.style.top = btop+'px';
+					
+					
+					player.style.position = "absolute";
+  					player.style.left = bleft+'px';
+  					player.style.top = btop+1+'px';
+				}
+				
+                
+            }
+            document.write("<br>");
+        }
+		
+	</script>
+</body>
+</html>
+              
