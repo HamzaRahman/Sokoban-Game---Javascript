@@ -5,7 +5,7 @@ function place(id,x_pos, y_pos) {
   element.style.left = x_pos+'px';
   element.style.top = y_pos+'px';
 }
-//Adding Event Listener To Function KeyPress
+//Adding Event Listener To Function KeyPress//
 function update(){
    document.addEventListener('keydown', keyPress);
 }
