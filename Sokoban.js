@@ -16,7 +16,7 @@ function keyPress(e) {
 	//Prevent the page from scrolling with keys
   	e.preventDefault();
 	//Getting collide-able entitites 
-  	var move = document.getElementById("entity-player").getBoundingClientRect();
+  	var move = document.getElementById("character").getBoundingClientRect();
 	var walls = document.getElementsByClassName("tile-wall");
 	var blocks = document.getElementsByClassName("entity-block");
 	var Goals = document.getElementsByClassName("tile-goal");
