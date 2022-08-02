@@ -8,7 +8,7 @@
 <body>
     <h1 align="center">Sokoban</h1>
 	<!--Div for containing Map-->
-	<div id="Map" style="width: 950px;"></div>
+	<div id="Map" style="width: 950px;margin:0 auto"></div>
     
 	 <script>    
 		const Map = document.getElementById("Map");
@@ -47,6 +47,11 @@
 					block.style.position = "absolute";
   					block.style.left = bleft+'px';
   					block.style.top = btop+1+'px';
+
+						var texture=document.createElement("img");
+						texture.setAttribute("src", "Assets/Box.jpg");
+						texture.className = 'tile-img'
+						block.appendChild(texture);
 				}
 				if(tileMap01.mapGrid[i][j]==" ")
 				{
@@ -64,6 +69,10 @@
 					Wall.className = 'tile-wall';
 					
 					Map.appendChild(Wall);
+						var texture=document.createElement("img");
+						texture.setAttribute("src", "Assets/Brick1.png");
+						texture.className = 'tile-img'
+						Wall.appendChild(texture);
 				}
 				if(tileMap01.mapGrid[i][j]=="G")
 				{
@@ -98,6 +107,10 @@
 					player.style.position = "absolute";
   					player.style.left = bleft+'px';
   					player.style.top = btop+1+'px';
+
+					texture.setAttribute("src", "Assets/Char.png");
+						texture.className = 'tile-img'
+						player.appendChild(texture);
 				}
 				
                 

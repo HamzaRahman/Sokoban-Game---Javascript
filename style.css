@@ -1,3 +1,7 @@
+.tile-img{
+	width:50px;
+	height: 50px;
+}
 .tile-wall{
 	background: #FF0004;
 	width:50px;
